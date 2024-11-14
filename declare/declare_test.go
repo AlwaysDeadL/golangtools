@@ -21,8 +21,13 @@ func BenchmarkDoDeclareSamples(b *testing.B) {
 }
 
 /**
-FuzzDoDeclareSamples:
+边界值测试： fuzz 会基于给定的值，重新生成不同的输入组合作为新的参数进行测试
 go test -fuzztime 10s -fuzz .
+
+当输入的参数不符合预期时：会生成当前错误的场景参数， 如：
+Failing input written to testdata/fuzz/FuzzDoDeclareSamples/301107ff18bbebcb
+    To re-run:
+    go test -run=FuzzDoDeclareSamples/301107ff18bbebcb
  */
 func FuzzDoDeclareSamples(f *testing.F) {
 	f.Add(1,2)
