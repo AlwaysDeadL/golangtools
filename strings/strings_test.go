@@ -2,6 +2,7 @@ package strings
 
 import (
 	"fmt"
+	"strings"
 	"testing"
 )
 
@@ -26,7 +27,11 @@ func TestString(t *testing.T) {
 		t.Errorf("not match suffix.")
 	}
 
+	//Just a example , could use strings.Contains instead
 	if !Contains("hello world.sh", "or") {
 		t.Errorf("not match suffix.")
 	}
+
+	fmt.Println(strings.Contains("hello world.sh", "or"))
+
 }
